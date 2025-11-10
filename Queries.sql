@@ -1,24 +1,3 @@
-SET SQL_SAFE_UPDATES = 0;
-
-UPDATE equipment_rentals_2024_final
-SET 
-    equipment_rented = NULLIF(equipment_rented, ''),
-    rental_cost = NULLIF(rental_cost, ''),
-    labor_cost = NULLIF(labor_cost, ''),
-    transport_cost = NULLIF(transport_cost, ''),
-    client_satisfaction = NULLIF(client_satisfaction, ''),
-    hours_on_site = NULLIF(hours_on_site, '');
-
--- Now convert data types
-ALTER TABLE equipment_rentals_2024_final
-MODIFY COLUMN equipment_rented INT,
-MODIFY COLUMN rental_cost DOUBLE,
-MODIFY COLUMN labor_cost DOUBLE,
-MODIFY COLUMN transport_cost DOUBLE,
-MODIFY COLUMN client_satisfaction DOUBLE,
-MODIFY COLUMN hours_on_site DOUBLE;
-
-
 SELECT *
 FROM AV_Company.equipment_rentals_2024_final;
 
