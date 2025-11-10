@@ -61,9 +61,6 @@ WHERE rental_cost IS NOT NULL AND labor_cost IS NOT NULL AND transport_cost IS N
 GROUP BY event_type
 ORDER BY avg_profit_margin;
 
-#Factors relating to customer satisfaction
-#No significant factors relating to client satisfaction other than revenue (below)
-
 #Revenue vs. client_satisfaction
 SELECT
   ROUND(SUM(CASE WHEN client_satisfaction < 3.5 
